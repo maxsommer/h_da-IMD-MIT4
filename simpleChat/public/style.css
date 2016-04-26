@@ -22,12 +22,13 @@ nav{
 	display: none;
 	position: fixed;
 
-	width: 100%;
+	width: calc(100% - 2rem);
 	height: calc( 100% - 8rem );
 	top: 3rem;
 	left: 0;
 	padding: 1rem;
 	overflow-y: scroll;
+	word-break: break-word;
 
 	z-index: 10;
 }
@@ -44,6 +45,9 @@ nav{
 
 #chat .message.system{
 	color: #4062BB;
+}
+#chat .message.system-warning{
+	color: #D62839;
 }
 
 .nav-item{
@@ -92,16 +96,23 @@ nav .active{
 #newMessage input[type='text']{
 	display: inline-block;
 	float: left;
-	width: calc(100% - 12rem);
+	transition: .25s;
+
+	width: calc(100% - 8rem);
 	min-height: 3rem;
-	line-height: 3rem;
 	padding: 0;
 	padding-left: 1rem;
 	padding-right: 1rem;
 	border: 0;
 	outline: 0;
 	background-color: rgba(245, 245, 245, 1);
+
 	font-size: 1.5rem;
+	line-height: 3rem;
+}
+#newMessage input[type='text']:focus{
+	background-color: rgba( 235, 235, 235, 1);
+	transition: .25s;
 }
 #newMessage button{
 	display: inline-block;
@@ -114,7 +125,7 @@ nav .active{
 	top: 0;
 	padding: 0;
 
-	width: 10rem;
+	width: 6rem;
 	height: 3rem;
 	background-color: #D62839;
 	border-left: 3px solid #D62839;
@@ -133,7 +144,7 @@ nav .active{
 	display: block;
 	position: absolute;
 
-	width: 100%;
+	width: calc(100% - 4rem);
 	height: calc( 100% - 10rem );
 	top: 3rem;
 	left: 0;
@@ -142,8 +153,9 @@ nav .active{
 
 #settings input[type='text']{
 	display: inline-block;
+	float: left;
 
-	width: calc(100% - 18rem);
+	width: calc(100% - 8rem);
 	height: 3rem;
 	padding: 1rem;
 
@@ -155,13 +167,18 @@ nav .active{
 	font-size: 2rem;
 	line-height: 3rem;
 }
+#settings input[type='text']:focus{
+	transition: .25s;
+	background-color: rgba(235, 235, 235, 1);
+}
 
 #settings button{
 	display: inline-block;
 	cursor: pointer;
+	float: left;
 	transition: .25s;
 
-	width: 8rem;
+	width: 6rem;
 	height: 5rem;
 	padding: 1rem;
 

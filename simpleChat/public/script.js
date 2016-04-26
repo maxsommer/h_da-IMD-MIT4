@@ -5,25 +5,35 @@
 	var socket = io();
 
 
-
-
 	/*
 	/	Messages empfangen
 	*/
 	socket.on('message', function(msg){
     		$('#chat').append("<div class=\"message\"><b>"+msg.name+"</b>: "+msg.message+"</div>");
+		updateScroll( document.getElementById('chat') );
   	});
 
 	socket.on('leave', function(msg){
     		$('#chat').append("<div class=\"message system\"><i>"+msg+"</i></div>");
+		updateScroll( document.getElementById('chat') );
   	});
 
 	socket.on('join', function(msg){
     		$('#chat').append("<div class=\"message system\"><i>"+msg+"</i></div>");
+		updateScroll( document.getElementById('chat') );
   	});
 
 	socket.on('namechange', function(msg){
     		$('#chat').append("<div class=\"message system\"><i>"+msg.before+" changed his name to "+msg.new+"</i></div>");
+		updateScroll( document.getElementById('chat') );
+  	});
+	socket.on('disconnect', function(){
+		$('#chat').append("<div class=\"message system-warning\"><i>It seems like we've lost connection to the server :(</i></div>");
+		updateScroll( document.getElementById('chat') );
+  	});
+	socket.on('connect', function(){
+		$('#chat').append("<div class=\"message system\"><i>Connection to server astablished :)</i></div>");
+		updateScroll( document.getElementById('chat') );
   	});
 
 
@@ -103,5 +113,13 @@
 
 			active = 2;
 		}
+
+	/*
+	/	Scroll Position updaten
+	*/
+
+	function updateScroll(element){
+    		element.scrollTop = element.scrollHeight;
+	}
 
 })();
