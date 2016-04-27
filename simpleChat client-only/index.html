@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>simpleChat @ ws://ws.epp.cloud:62633 | Max Sommer</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="theme-color" content="#D62839">
+		<link rel="manifest" href="manifest.json">
+	</head>
+
+
+	<body>
+
+		<nav>
+			<div class="nav-item" id="navChat">Chat</div>
+			<div class="nav-item active" id="navSettings">Einstellungen</div>
+		</nav>
+
+		<div id="settings">
+			<input type="text" name="username" placeholder="Username" autocomplete="off" maxlength="20">
+			<button>use</button>
+		</div>
+
+		<div id="chat">
+
+		</div>
+
+		<div id="newMessage">
+			<input id="messageInput" type="text" name="message" placeholder="Type a message..." autocomplete="off" maxlength="1000">
+			<button>send</button>
+		</div>
+
+	</body>
+
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+
+</html>
