@@ -23,9 +23,14 @@
 
 			if( eventdata.type === "message" ){
 				if( eventdata.value.message.message != undefined ){
+					eventdata.value.user 			= eventdata.value.user.replace(/<(?:.|\n)*?>/gm, '');
+					eventdata.value.message.message 	= eventdata.value.message.message.replace(/<(?:.|\n)*?>/gm, '');
+
 					$('#chat').append("<div class=\"message\"><b>"+eventdata.value.user+"</b>: "+eventdata.value.message.message+"</div>");
 				}
 				else{
+					eventdata.value.user 			= eventdata.value.user.replace(/<(?:.|\n)*?>/gm, '');
+					eventdata.value.message 		= eventdata.value.message.replace(/<(?:.|\n)*?>/gm, '');
 					$('#chat').append("<div class=\"message\"><b>"+eventdata.value.user+"</b>: "+eventdata.value.message+"</div>");
 				}
 				updateScroll( document.getElementById('chat') );
