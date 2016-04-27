@@ -5,4 +5,6 @@ Um NodeJS Code ausführen zu können, vorher im jeweiligen Verzeichnis noch einm
 
 
 Liste der Übungen:  
-- Übung Websockets, Aufgabe 2: /simpleChat
+- Übung Websockets, Aufgabe 2: /simpleChat  
+- Übung Websockets, Aufgabe 3: /simpleChat client-only
+
